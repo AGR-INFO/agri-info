@@ -1,0 +1,8 @@
+baseURL = "https://agri.re.kr/"
+languageCode = "ko"
+title = "아시아농업농촌연구원"
+theme = "PaperMod"
+
+[params]
+  description = "아시아 농업·농촌의 지속가능한 발전을 연구합니다"
+  homeInfoParams = {Title = "아시아농업농촌연구원", Content = "Asia Agrarian Research Institute"}
