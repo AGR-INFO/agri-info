@@ -1,0 +1,84 @@
+backend:
+  name: github
+  repo: AGR-INFO/agri-info
+  branch: main
+
+media_folder: static/images
+public_folder: /images
+
+i18n:
+  structure: multiple_folders
+  locales: [ko, en]
+  default_locale: ko
+
+collections:
+  - name: pages_ko
+    label: "페이지 (한국어)"
+    i18n:
+      structure: multiple_folders
+      locales: [ko]
+    files:
+      - label: "소개"
+        name: about
+        file: content/ko/about/_index.md
+        fields:
+          - {label: "제목", name: title, widget: string}
+          - {label: "내용", name: body, widget: markdown}
+      - label: "연구"
+        name: research
+        file: content/ko/research/_index.md
+        fields:
+          - {label: "제목", name: title, widget: string}
+          - {label: "내용", name: body, widget: markdown}
+      - label: "자료"
+        name: resources
+        file: content/ko/resources/_index.md
+        fields:
+          - {label: "제목", name: title, widget: string}
+          - {label: "내용", name: body, widget: markdown}
+      - label: "구성원"
+        name: members
+        file: content/ko/members/_index.md
+        fields:
+          - {label: "제목", name: title, widget: string}
+          - {label: "내용", name: body, widget: markdown}
+      - label: "연락처"
+        name: contact
+        file: content/ko/contact/_index.md
+        fields:
+          - {label: "제목", name: title, widget: string}
+          - {label: "내용", name: body, widget: markdown}
+
+  - name: pages_en
+    label: "Pages (English)"
+    files:
+      - label: "About"
+        name: about
+        file: content/en/about/_index.md
+        fields:
+          - {label: "Title", name: title, widget: string}
+          - {label: "Content", name: body, widget: markdown}
+      - label: "Research"
+        name: research
+        file: content/en/research/_index.md
+        fields:
+          - {label: "Title", name: title, widget: string}
+          - {label: "Content", name: body, widget: markdown}
+      - label: "Resources"
+        name: resources
+        file: content/en/resources/_index.md
+        fields:
+          - {label: "Title", name: title, widget: string}
+          - {label: "Content", name: body, widget: markdown}
+      - label: "Members"
+        name: members
+        file: content/en/members/_index.md
+        fields:
+          - {label: "Title", name: title, widget: string}
+          - {label: "Content", name: body, widget: markdown}
+      - label: "Contact"
+        name: contact
+        file: content/en/contact/_index.md
+        fields:
+          - {label: "Title", name: title, widget: string}
+          - {label: "Content", name: body, widget: markdown}
