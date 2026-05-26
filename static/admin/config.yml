@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: AGR-INFO/agri-info
   branch: main
 
 media_folder: static/images
