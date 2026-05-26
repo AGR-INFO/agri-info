@@ -60,3 +60,5 @@ collections:
         name: resources
         file: content/en/resources/_index.md
         fields:
+          - {label: "Title", name: title, widget: string}
+          - {label: "Content", name: body, widget: markdown}
