@@ -6,17 +6,9 @@ backend:
 media_folder: static/images
 public_folder: /images
 
-i18n:
-  structure: multiple_folders
-  locales: [ko, en]
-  default_locale: ko
-
 collections:
   - name: pages_ko
     label: "페이지 (한국어)"
-    i18n:
-      structure: multiple_folders
-      locales: [ko]
     files:
       - label: "소개"
         name: about
@@ -68,17 +60,3 @@ collections:
         name: resources
         file: content/en/resources/_index.md
         fields:
-          - {label: "Title", name: title, widget: string}
-          - {label: "Content", name: body, widget: markdown}
-      - label: "Members"
-        name: members
-        file: content/en/members/_index.md
-        fields:
-          - {label: "Title", name: title, widget: string}
-          - {label: "Content", name: body, widget: markdown}
-      - label: "Contact"
-        name: contact
-        file: content/en/contact/_index.md
-        fields:
-          - {label: "Title", name: title, widget: string}
-          - {label: "Content", name: body, widget: markdown}
