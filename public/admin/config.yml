@@ -3,6 +3,8 @@ backend:
   repo: AGR-INFO/agri-info
   branch: main
 
+local_backend: true
+
 media_folder: static/images
 public_folder: /images
 
@@ -40,25 +42,36 @@ collections:
         fields:
           - {label: "제목", name: title, widget: string}
           - {label: "내용", name: body, widget: markdown}
-
   - name: pages_en
     label: "Pages (English)"
     files:
       - label: "About"
-        name: about
+        name: about_en
         file: content/en/about/_index.md
         fields:
           - {label: "Title", name: title, widget: string}
           - {label: "Content", name: body, widget: markdown}
       - label: "Research"
-        name: research
+        name: research_en
         file: content/en/research/_index.md
         fields:
           - {label: "Title", name: title, widget: string}
           - {label: "Content", name: body, widget: markdown}
       - label: "Resources"
-        name: resources
+        name: resources_en
         file: content/en/resources/_index.md
+        fields:
+          - {label: "Title", name: title, widget: string}
+          - {label: "Content", name: body, widget: markdown}
+      - label: "Members"
+        name: members_en
+        file: content/en/members/_index.md
+        fields:
+          - {label: "Title", name: title, widget: string}
+          - {label: "Content", name: body, widget: markdown}
+      - label: "Contact"
+        name: contact_en
+        file: content/en/contact/_index.md
         fields:
           - {label: "Title", name: title, widget: string}
           - {label: "Content", name: body, widget: markdown}
