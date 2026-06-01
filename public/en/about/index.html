@@ -104,6 +104,7 @@ Rural basic services and social economy
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
+  margin-bottom: 15px !important;
 }
 .logo-switches {
   margin-left: auto !important;
@@ -134,8 +135,48 @@ Rural basic services and social economy
 #menu li {
   margin: 0 20px !important;
 }
-.logo {
-  margin-bottom: 15px !important;
+.first-entry.home-info .entry-header h1 {
+  font-size: 28px !important;
+}
+.first-entry.home-info .entry-content p {
+  font-size: 16px !important;
+}
+@media (max-width: 768px) {
+  .logo a img {
+    height: 50px !important;
+  }
+  .logo a span span:first-child {
+    font-size: 20px !important;
+  }
+  .logo a span span:last-child {
+    font-size: 13px !important;
+  }
+  #menu a {
+    font-size: 12px !important;
+  }
+  #menu li {
+    margin: 0 4px !important;
+  }
+  .logo a {
+    gap: 0px !important;
+  }
+  .logo {
+    margin-bottom: 0.1px !important;
+  }
+  .lang-menu a {
+    font-size: 8px !important;
+    padding: 0px 6px !important;
+    border-radius: 8px !important;
+  }
+  .first-entry.home-info .entry-header h1 {
+    font-size: 18px !important;
+  }
+  .first-entry.home-info .entry-content p {
+    font-size: 12px !important;
+  }
+  .main {
+  background-color: transparent !important;
+}
 }
 </style>
 </head>
@@ -148,7 +189,7 @@ Rural basic services and social economy
                     height="55">
                 <span style="display:inline-flex; flex-direction:column; justify-content:center; margin-left:15px; line-height:1.5;">
                   <span style="font-size:35px; font-weight:700; color:#708090; letter-spacing:1.0px;">아시아농업농촌연구원</span>
-                  <span style="font-size:25px; font-weight:700; color:#1D9E75; letter-spacing:0.01px;">ASIA AGRARIAN RESRAECH INSTITUTE</span>
+                  <span style="font-size:25px; font-weight:700; color:#1ca198; letter-spacing:0.01px;">ASIA AGRARIAN RESEARCH INSTITUTE</span>
                 </span>
             </a>
 
@@ -273,13 +314,14 @@ civil society worldwide.</p>
     };
 </script><div style="
   position: fixed;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 60%;
+  width: 90%;
+  max-width: 800px;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.12;
+  opacity: 0.30;
 ">
   <img src="/images/agri-watermark.png" style="width:100%; height:auto;">
 </div>
