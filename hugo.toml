@@ -7,11 +7,9 @@ defaultContentLanguageInSubdir = false
 [params]
   ShowLanguageSwitcher = true
   disableThemeToggle = true
-
-[params.label]
-  text = ""
-  icon = "/images/logo-kor.png"
-  iconHeight = 60
+  [params.footer]
+    hideCopyright = false
+    text = "© 2026 아시아농업농촌연구원 · All rights reserved"
 
 [languages.ko]
   languageName = "한국어"
@@ -22,9 +20,9 @@ defaultContentLanguageInSubdir = false
 [languages.ko.params]
   description = "아시아 농업·농촌의 지속가능한 발전을 위한 연구·네트워크 허브"
   [languages.ko.params.label]
-    text = ""
-    icon = "/images/logo-kor.png"
-    iconHeight = 60
+    text = "아시아농업농촌연구원"
+    icon = "/images/logo.png"
+    iconHeight = 55
   [languages.ko.params.homeInfoParams]
     Title = "아시아농업농촌연구원"
     Content = "아시아 농업·농촌의 지속가능한 발전을 위한 연구·네트워크 허브"
@@ -38,9 +36,9 @@ defaultContentLanguageInSubdir = false
 [languages.en.params]
   description = "A research and network hub for sustainable agriculture and rural development in Asia"
   [languages.en.params.label]
-    text = ""
-    icon = "/images/logo-eng.png"
-    iconHeight = 60
+    text = "Asia Agrarian Research Institute"
+    icon = "/images/logo.png"
+    iconHeight = 55
   [languages.en.params.homeInfoParams]
     Title = "Asia Agrarian Research Institute"
     Content = "A research and network hub for sustainable agriculture and rural development in Asia"

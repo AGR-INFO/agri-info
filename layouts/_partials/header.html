@@ -1,0 +1,52 @@
+<header class="header" style="padding: 30px 0 !important;">
+    <nav class="header-nav">
+        <div class="logo">
+            {{- if site.Title }}
+            <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ site.Title }} (Alt + H)">
+                {{- if site.Params.label.icon }}
+                <img src="{{- site.Params.label.icon | absURL -}}" alt="" aria-label="logo"
+                    height="{{- site.Params.label.iconHeight | default "55" -}}">
+                {{- end }}
+                <span style="display:inline-flex; flex-direction:column; justify-content:center; margin-left:15px; line-height:1.5;">
+                  <span style="font-size:35px; font-weight:700; color:#708090; letter-spacing:1.0px;">아시아농업농촌연구원</span>
+                  <span style="font-size:25px; font-weight:700; color:#1D9E75; letter-spacing:0.01px;">ASIA AGRARIAN RESRAECH INSTITUTE</span>
+                </span>
+            </a>
+            {{- end }}
+
+            <div class="logo-switches">
+                {{- if (not site.Params.disableLangToggle) }}
+                    {{- $lang := .Lang}}
+                    {{- with site.Home.Translations }}
+                    <ul class="lang-menu">
+                        {{- range . -}}
+                        {{- if ne $lang .Lang }}
+                        <li>
+                            <a href="{{- .Permalink -}}" aria-label="{{ .Language.LanguageName | default (.Lang | title) }}">
+                                {{- .Language.LanguageName | default (.Lang | title) -}}
+                            </a>
+                        </li>
+                        {{- end -}}
+                        {{- end}}
+                    </ul>
+                    {{- end }}
+                {{- end }}
+            </div>
+        </div>
+
+        {{- $currentPage := . }}
+        <ul id="menu" class="menu">
+            {{- range site.Menus.main }}
+            {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | absLangURL }}
+            {{- $page_url:= $currentPage.Permalink | absLangURL }}
+            <li>
+                <a href="{{ .URL | absLangURL }}" title="{{ .Title | default .Name }}">
+                    <span {{- if eq $menu_item_url $page_url }} class="active" {{- end }}>
+                        {{- .Name -}}
+                    </span>
+                </a>
+            </li>
+            {{- end }}
+        </ul>
+    </nav>
+</header>
