@@ -3,47 +3,85 @@ backend:
   repo: AGR-INFO/agri-info
   branch: main
 
-local_backend: true
-
 media_folder: static/images
 public_folder: /images
 
 collections:
+
+  # ── 섹션 페이지 (한국어) ──
   - name: pages_ko
-    label: "페이지 (한국어)"
+    label: "섹션 페이지 (한국어)"
     files:
-      - label: "소개"
-        name: about
+      - label: "소개 페이지"
+        name: about_ko
         file: content/ko/about/_index.md
         fields:
           - {label: "제목", name: title, widget: string}
           - {label: "내용", name: body, widget: markdown}
-      - label: "연구"
-        name: research
+      - label: "연구 소개글"
+        name: research_index_ko
         file: content/ko/research/_index.md
         fields:
           - {label: "제목", name: title, widget: string}
-          - {label: "내용", name: body, widget: markdown}
-      - label: "자료"
-        name: resources
+          - {label: "소개글", name: body, widget: markdown}
+      - label: "자료 소개글"
+        name: resources_index_ko
         file: content/ko/resources/_index.md
         fields:
           - {label: "제목", name: title, widget: string}
-          - {label: "내용", name: body, widget: markdown}
+          - {label: "소개글", name: body, widget: markdown}
       - label: "구성원"
-        name: members
+        name: members_ko
         file: content/ko/members/_index.md
         fields:
           - {label: "제목", name: title, widget: string}
           - {label: "내용", name: body, widget: markdown}
       - label: "연락처"
-        name: contact
+        name: contact_ko
         file: content/ko/contact/_index.md
         fields:
           - {label: "제목", name: title, widget: string}
           - {label: "내용", name: body, widget: markdown}
+
+  # ── 연구 개별 항목 (한국어) ──
+  - name: research_ko
+    label: "연구 항목 (한국어)"
+    folder: content/ko/research
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - {label: "제목", name: title, widget: string}
+      - {label: "날짜", name: date, widget: datetime, required: false}
+      - {label: "요약", name: description, widget: string, required: false}
+      - label: "연구 유형"
+        name: researchType
+        widget: select
+        options: ["위탁연구", "자체연구", "국제연구", "기타"]
+        required: false
+      - {label: "내용", name: body, widget: markdown, required: false}
+      - {label: "임시저장", name: draft, widget: boolean, default: false}
+
+  # ── 자료 개별 항목 (한국어) ──
+  - name: resources_ko
+    label: "자료 (한국어)"
+    folder: content/ko/resources
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - {label: "자료명", name: title, widget: string}
+      - {label: "날짜", name: date, widget: datetime, required: false}
+      - {label: "요약", name: description, widget: string, required: false}
+      - label: "자료 유형"
+        name: resourceType
+        widget: select
+        options: ["보고서", "논문", "정책자료", "발표자료", "기타"]
+        required: false
+      - {label: "내용", name: body, widget: markdown, required: false}
+      - {label: "임시저장", name: draft, widget: boolean, default: false}
+
+  # ── Section Pages (English) ──
   - name: pages_en
-    label: "Pages (English)"
+    label: "Section Pages (English)"
     files:
       - label: "About"
         name: about_en
@@ -51,18 +89,18 @@ collections:
         fields:
           - {label: "Title", name: title, widget: string}
           - {label: "Content", name: body, widget: markdown}
-      - label: "Research"
-        name: research_en
+      - label: "Research (Intro)"
+        name: research_index_en
         file: content/en/research/_index.md
         fields:
           - {label: "Title", name: title, widget: string}
-          - {label: "Content", name: body, widget: markdown}
-      - label: "Resources"
-        name: resources_en
+          - {label: "Intro", name: body, widget: markdown}
+      - label: "Resources (Intro)"
+        name: resources_index_en
         file: content/en/resources/_index.md
         fields:
           - {label: "Title", name: title, widget: string}
-          - {label: "Content", name: body, widget: markdown}
+          - {label: "Intro", name: body, widget: markdown}
       - label: "Members"
         name: members_en
         file: content/en/members/_index.md
@@ -75,3 +113,39 @@ collections:
         fields:
           - {label: "Title", name: title, widget: string}
           - {label: "Content", name: body, widget: markdown}
+
+  # ── Research Items (English) ──
+  - name: research_en
+    label: "Research Items (English)"
+    folder: content/en/research
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - {label: "Title", name: title, widget: string}
+      - {label: "Date", name: date, widget: datetime, required: false}
+      - {label: "Description", name: description, widget: string, required: false}
+      - label: "Type"
+        name: researchType
+        widget: select
+        options: ["Commissioned Research", "In-house Research", "International Research", "Other"]
+        required: false
+      - {label: "Content", name: body, widget: markdown, required: false}
+      - {label: "Draft", name: draft, widget: boolean, default: false}
+
+  # ── Resources (English) ──
+  - name: resources_en
+    label: "Resources (English)"
+    folder: content/en/resources
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - {label: "Title", name: title, widget: string}
+      - {label: "Date", name: date, widget: datetime, required: false}
+      - {label: "Description", name: description, widget: string, required: false}
+      - label: "Type"
+        name: resourceType
+        widget: select
+        options: ["Report", "Paper", "Policy Document", "Presentation", "Other"]
+        required: false
+      - {label: "Content", name: body, widget: markdown, required: false}
+      - {label: "Draft", name: draft, widget: boolean, default: false}
