@@ -52,6 +52,7 @@ collections:
     fields:
       - {label: "제목", name: title, widget: string}
       - {label: "날짜", name: date, widget: datetime, required: false}
+      - {label: "대표 이미지", name: image, widget: image, required: false}
       - {label: "요약", name: description, widget: string, required: false}
       - label: "연구 유형"
         name: researchType
@@ -70,6 +71,7 @@ collections:
     fields:
       - {label: "자료명", name: title, widget: string}
       - {label: "날짜", name: date, widget: datetime, required: false}
+      - {label: "대표 이미지", name: image, widget: image, required: false}
       - {label: "요약", name: description, widget: string, required: false}
       - label: "자료 유형"
         name: resourceType
@@ -123,6 +125,7 @@ collections:
     fields:
       - {label: "Title", name: title, widget: string}
       - {label: "Date", name: date, widget: datetime, required: false}
+      - {label: "Cover Image", name: image, widget: image, required: false}
       - {label: "Description", name: description, widget: string, required: false}
       - label: "Type"
         name: researchType
@@ -141,6 +144,7 @@ collections:
     fields:
       - {label: "Title", name: title, widget: string}
       - {label: "Date", name: date, widget: datetime, required: false}
+      - {label: "Cover Image", name: image, widget: image, required: false}
       - {label: "Description", name: description, widget: string, required: false}
       - label: "Type"
         name: resourceType
