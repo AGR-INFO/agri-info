@@ -12,7 +12,7 @@ defaultContentLanguageInSubdir = false
     text = "© 2026 아시아농업농촌연구원 · All rights reserved"
 
 [languages.ko]
-  languageName = "한국어"
+  languageName = "KO"
   weight = 1
   title = "아시아농업농촌연구원"
   contentDir = "content/ko"
@@ -28,7 +28,7 @@ defaultContentLanguageInSubdir = false
     Content = "아시아 농업·농촌의 지속가능한 발전을 위한 연구·네트워크 허브"
 
 [languages.en]
-  languageName = "English"
+  languageName = "EN"
   weight = 2
   title = "Asia Agrarian Research Institute"
   contentDir = "content/en"
