@@ -1,15 +1,48 @@
+/* ================================================
+   AGRI 커스텀 스타일
+   숫자만 바꾸면 크기 조정 가능
+   rem 기준: 1rem = 16px, 1.2rem = 19px, 1.5rem = 24px
+   ================================================ */
+
+/* ── 사이트 전체 기본 글자 크기 ── */
+body {
+  font-size: 1rem;        /* 본문 기본 크기 */
+  line-height: 1.75;      /* 줄 간격 */
+}
+
+/* ── 상단 메뉴 글자 ── */
+.nav a {
+  font-size: 0.95rem;
+}
+
+/* ── 섹션 페이지 헤더 제목 (연구, 자료, 소개 등 메뉴 클릭시) ── */
+.page-header h1 {
+  font-size: 1.6rem;
+}
+
+/* ── 개별 글 제목 (카드 클릭 후 상세 페이지) ── */
+.post-title {
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+
+/* ── 글 본문 내용 ── */
+.post-content {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* ── 글 본문 제목들 (H1~H3) ── */
+.post-content h1 { font-size: 1.5rem; }
+.post-content h2 { font-size: 1.3rem; }
+.post-content h3 { font-size: 1.1rem; }
+
 /* ── 연구·자료 그리드 ── */
 .section-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin: 2rem 0;
-}
-
-@media (max-width: 768px) {
-  .section-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 .section-card {
@@ -51,20 +84,20 @@
 }
 
 .card-badge {
-  font-size: 0.72rem;
+  font-size: 0.72rem;     /* 연구유형 뱃지 */
   color: var(--secondary);
   margin-bottom: 0.35rem;
 }
 
 .card-title {
-  font-size: 0.95rem;
+  font-size: 0.95rem;     /* 카드 제목 */
   font-weight: 600;
   margin: 0 0 0.4rem;
   line-height: 1.4;
 }
 
 .card-desc {
-  font-size: 0.83rem;
+  font-size: 0.83rem;     /* 카드 요약 */
   color: var(--secondary);
   margin: 0;
   display: -webkit-box;
@@ -72,10 +105,30 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-/* ── 모바일 제목 크기 조정 ── */
+
+/* ── 모바일 (768px 이하) ── */
 @media (max-width: 768px) {
+  body {
+    font-size: 0.95rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.3rem;   /* 섹션 헤더 제목 */
+  }
+
   .post-title {
-    font-size: 1.4rem;
-    line-height: 1.4;
+    font-size: 1.2rem;   /* 개별 글 제목 */
+  }
+
+  .post-content h1 { font-size: 1.3rem; }
+  .post-content h2 { font-size: 1.1rem; }
+  .post-content h3 { font-size: 1rem; }
+
+  .section-grid {
+    grid-template-columns: 1fr;  /* 모바일은 1열 */
+  }
+
+  .card-title {
+    font-size: 0.9rem;
   }
 }
