@@ -48,6 +48,7 @@ collections:
     label: "연구 항목 (한국어)"
     folder: content/ko/research
     create: true
+    filter: {field: "title", value: "_index", pattern: "^(?!_index$).*"}
     slug: "{{year}}-{{slug}}"
     fields:
       - {label: "제목", name: title, widget: string}
@@ -67,6 +68,7 @@ collections:
     label: "자료 (한국어)"
     folder: content/ko/resources
     create: true
+    filter: {field: "title", value: "_index", pattern: "^(?!_index$).*"}
     slug: "{{year}}-{{slug}}"
     fields:
       - {label: "자료명", name: title, widget: string}
@@ -121,6 +123,7 @@ collections:
     label: "Research Items (English)"
     folder: content/en/research
     create: true
+    filter: {field: "title", value: "_index", pattern: "^(?!_index$).*"}
     slug: "{{year}}-{{slug}}"
     fields:
       - {label: "Title", name: title, widget: string}
@@ -140,6 +143,7 @@ collections:
     label: "Resources (English)"
     folder: content/en/resources
     create: true
+    filter: {field: "title", value: "_index", pattern: "^(?!_index$).*"}
     slug: "{{year}}-{{slug}}"
     fields:
       - {label: "Title", name: title, widget: string}
