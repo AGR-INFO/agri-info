@@ -13,7 +13,7 @@ body::after {
   inset: 0;
   background-image: url('/images/bg-terraced-field.jpg');
   background-size: cover;
-  background-position: center top;
+  background-position: center center;
   background-repeat: no-repeat;
   z-index: -1;
   mask-image: linear-gradient(
