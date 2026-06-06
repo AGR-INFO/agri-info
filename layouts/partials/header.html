@@ -13,10 +13,9 @@
 
   <div class="agri-brand">
     <a href="{{ .Site.Home.RelPermalink }}" accesskey="h">
-      {{- with .Site.Params.label.icon }}
-      <img src="{{ . }}" height="{{ $.Site.Params.label.iconHeight | default 50 }}" alt="">
-      {{- end }}
-      <span>{{ .Site.Params.label.text | default .Site.Title }}</span>
+      <img class="logo-teal" src="/images/logo.png" height="{{ .Site.Params.label.iconHeight | default 50 }}" alt="">
+      <span class="brand-name">{{ .Site.Params.label.text | default .Site.Title }}</span>
+      <img class="logo-gold" src="/images/logo-gold.png" height="{{ .Site.Params.label.iconHeight | default 50 }}" alt="">
     </a>
   </div>
 
