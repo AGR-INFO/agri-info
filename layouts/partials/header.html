@@ -1,0 +1,38 @@
+{{- $currentLang := .Language.Lang }}
+<header class="agri-header">
+
+  <div class="agri-topbar">
+    {{- range .Site.Home.AllTranslations }}
+    <a href="{{ .Permalink }}" class="agri-lang-btn{{ if eq .Language.Lang $currentLang }} active{{ end }}">
+      {{- .Language.LanguageName -}}
+    </a>
+    {{- end }}
+  </div>
+
+  <div class="agri-line"></div>
+
+  <div class="agri-brand">
+    <a href="{{ .Site.Home.RelPermalink }}" accesskey="h">
+      {{- with .Site.Params.label.icon }}
+      <img src="{{ . }}" height="{{ $.Site.Params.label.iconHeight | default 50 }}" alt="">
+      {{- end }}
+      <span>{{ .Site.Params.label.text | default .Site.Title }}</span>
+    </a>
+  </div>
+
+  <div class="agri-line"></div>
+
+  <nav class="agri-nav">
+    <ul>
+      {{- $currentPage := . }}
+      {{- range .Site.Menus.main }}
+      <li>
+        <a href="{{ .URL }}"{{ if $currentPage.IsMenuCurrent "main" . }} class="active"{{ end }}>
+          {{- .Name -}}
+        </a>
+      </li>
+      {{- end }}
+    </ul>
+  </nav>
+
+</header>
