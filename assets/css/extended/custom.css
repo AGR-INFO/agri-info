@@ -164,14 +164,9 @@ body::before {
   position: relative;
   z-index: 1;
 }
-/* ── 언어 전환 버튼 테두리 제거 ── */
-.lang-switch a {
-  border: none !important;
-  padding: 0 4px !important;
+/* ── 언어 전환 버튼 균등 너비 ── */
+.lang-menu a {
+  min-width: 2.2rem !important;
+  justify-content: center !important;
   font-size: 0.85rem !important;
-  opacity: 0.7;
-}
-.lang-switch a:hover {
-  opacity: 1;
-  text-decoration: underline;
 }
