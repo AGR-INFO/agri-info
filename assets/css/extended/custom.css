@@ -152,10 +152,28 @@ body {
   line-height: 1.8;
 }
 
-/* ── 글 본문 제목들 (H1~H3) ── */
-.post-content h1 { font-size: 1.2rem; }
-.post-content h2 { font-size: 1.1rem; }
-.post-content h3 { font-size: 0.9rem; }
+/* ── 본문 제목 스타일 ── */
+.post-content h1 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 2rem 0 0.8rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid #1ca198;
+}
+
+.post-content h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 1.6rem 0 0.6rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-content h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.2rem 0 0.4rem;
+}
 
 /* ── 연구·자료 그리드 ── */
 .section-grid {
