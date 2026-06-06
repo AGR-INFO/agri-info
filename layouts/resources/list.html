@@ -6,6 +6,7 @@
   {{- end }}
 </header>
 
+{{- if .Pages }}
 <div class="section-grid">
   {{- range .Pages }}
   <div class="section-card">
@@ -28,4 +29,7 @@
   </div>
   {{- end }}
 </div>
+{{- else }}
+<p style="color:var(--secondary); margin-top:2rem;">곧 업데이트될 예정입니다.</p>
+{{- end }}
 {{- end }}
