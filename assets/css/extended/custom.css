@@ -72,3 +72,10 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+/* ── 모바일 제목 크기 조정 ── */
+@media (max-width: 768px) {
+  .post-title {
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
+}
