@@ -3,6 +3,117 @@
    숫자만 바꾸면 크기 조정 가능
    rem 기준: 1rem = 16px, 1.2rem = 19px, 1.5rem = 24px
    ================================================ */
+/* ══════════════════════════════════
+   AGRI 커스텀 헤더
+   ══════════════════════════════════ */
+
+.agri-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--theme);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  width: 100%;
+}
+
+/* 구분선 */
+.agri-line {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #1ca198 30%, #1ca198 70%, transparent);
+  opacity: 0.5;
+}
+
+/* 언어 전환 (상단) */
+.agri-topbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 4px 20px;
+  gap: 0;
+}
+
+.agri-lang-btn {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--secondary);
+  text-decoration: none;
+  padding: 2px 8px;
+  transition: color 0.2s;
+}
+
+.agri-lang-btn.active {
+  color: #1ca198;
+}
+
+.agri-lang-btn:hover {
+  color: #1ca198;
+}
+
+.agri-lang-btn + .agri-lang-btn {
+  border-left: 1px solid var(--border);
+}
+
+/* 기관명 */
+.agri-brand {
+  padding: 10px 20px;
+}
+
+.agri-brand a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.agri-brand span {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* 메뉴 (전체 너비 균등) */
+.agri-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.agri-nav li {
+  flex: 1;
+  text-align: center;
+}
+
+.agri-nav a {
+  display: block;
+  padding: 10px 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s, background 0.2s;
+  white-space: nowrap;
+}
+
+.agri-nav a:hover,
+.agri-nav a.active {
+  color: #1ca198;
+  background: rgba(28,161,152,0.05);
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+  .agri-brand span {
+    font-size: 0.9rem;
+  }
+
+  .agri-nav a {
+    font-size: 0.75rem;
+    padding: 8px 2px;
+  }
+}
 /* ── 전체 기본 폰트 ── */
 body {
   font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
