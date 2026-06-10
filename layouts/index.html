@@ -1,9 +1,9 @@
 {{- define "main" }}
 
-{{/* ── 미니멀 대문 ── */}}
+{{/* ── 대문 ── */}}
 {{- with .Site.Params.homeInfoParams }}
 <div class="home-hero">
-  {{- with .Title }}<p class="home-hero-title">{{ . }}</p>{{- end }}
+  {{- with .Title }}<h1 class="home-hero-title">{{ . }}</h1>{{- end }}
   {{- with .Content }}<p class="home-hero-sub">{{ . | markdownify }}</p>{{- end }}
 </div>
 {{- end }}
@@ -17,7 +17,7 @@
   {{- $link := .Permalink }}
   {{- if .Params.externalLink }}{{- $link = .Params.externalLink }}{{- end }}
   {{- $section := .Section }}
-  {{- $badge := $section }}
+  {{- $badge := "" }}
   {{- if eq $lang "ko" }}
     {{- if eq $section "research" }}{{- $badge = "연구" }}{{- end }}
     {{- if eq $section "resources" }}{{- $badge = "자료" }}{{- end }}
@@ -29,7 +29,6 @@
   <a href="{{ $link }}" class="home-item"{{ if .Params.externalLink }} target="_blank" rel="noopener"{{ end }}>
     <span class="home-badge">{{ $badge }}</span>
     <span class="home-title">{{ .Title }}</span>
-    <span class="home-date">{{ .Date.Format "2006.01.02" }}</span>
   </a>
   {{- end }}
   {{- end }}
