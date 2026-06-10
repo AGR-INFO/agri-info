@@ -8,9 +8,13 @@
 
 {{- if .Pages }}
 <div class="section-grid">
-  {{- range .Pages }}
+  {{- range sort .Pages "Params.weight" "asc" }}
   <div class="section-card">
+    {{- if .Params.externalLink }}
+    <a href="{{ .Params.externalLink }}" target="_blank" rel="noopener">
+    {{- else }}
     <a href="{{ .Permalink }}">
+    {{- end }}
       {{- if .Params.image }}
       <img class="card-thumb" src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
       {{- else }}
@@ -23,6 +27,9 @@
         <p class="card-title">{{ .Title }}</p>
         {{- with .Description }}
         <p class="card-desc">{{ . }}</p>
+        {{- end }}
+        {{- if .Params.externalLink }}
+        <p class="card-link-hint">↗ 외부 링크</p>
         {{- end }}
       </div>
     </a>
