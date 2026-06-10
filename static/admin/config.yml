@@ -48,18 +48,19 @@ collections:
     label: "연구 항목 (한국어)"
     folder: content/ko/research
     create: true
-    filter: {field: "title", value: "_index", pattern: "^(?!_index$).*"}
     slug: "{{year}}-{{slug}}"
     fields:
       - {label: "제목", name: title, widget: string}
       - {label: "날짜", name: date, widget: datetime, required: false}
       - {label: "대표 이미지", name: image, widget: image, required: false}
       - {label: "요약", name: description, widget: string, required: false}
+      - {label: "외부 링크 (있으면 클릭 시 바로 이동)", name: externalLink, widget: string, required: false}
       - label: "연구 유형"
         name: researchType
         widget: select
         options: ["위탁연구", "자체연구", "국제연구", "기타"]
         required: false
+      - {label: "배치 순서 (숫자 낮을수록 앞)", name: weight, widget: number, required: false, default: 0}
       - {label: "내용", name: body, widget: markdown, required: false}
       - {label: "임시저장", name: draft, widget: boolean, default: false}
 
@@ -68,18 +69,19 @@ collections:
     label: "자료 (한국어)"
     folder: content/ko/resources
     create: true
-    filter: {field: "title", value: "_index", pattern: "^(?!_index$).*"}
     slug: "{{year}}-{{slug}}"
     fields:
       - {label: "자료명", name: title, widget: string}
       - {label: "날짜", name: date, widget: datetime, required: false}
       - {label: "대표 이미지", name: image, widget: image, required: false}
       - {label: "요약", name: description, widget: string, required: false}
+      - {label: "외부 링크 (있으면 클릭 시 바로 이동)", name: externalLink, widget: string, required: false}
       - label: "자료 유형"
         name: resourceType
         widget: select
         options: ["보고서", "논문", "정책자료", "발표자료", "기타"]
         required: false
+      - {label: "배치 순서 (숫자 낮을수록 앞)", name: weight, widget: number, required: false, default: 0}
       - {label: "내용", name: body, widget: markdown, required: false}
       - {label: "임시저장", name: draft, widget: boolean, default: false}
 
@@ -123,18 +125,19 @@ collections:
     label: "Research Items (English)"
     folder: content/en/research
     create: true
-    filter: {field: "title", value: "_index", pattern: "^(?!_index$).*"}
     slug: "{{year}}-{{slug}}"
     fields:
       - {label: "Title", name: title, widget: string}
       - {label: "Date", name: date, widget: datetime, required: false}
       - {label: "Cover Image", name: image, widget: image, required: false}
       - {label: "Description", name: description, widget: string, required: false}
+      - {label: "External Link (direct redirect on click)", name: externalLink, widget: string, required: false}
       - label: "Type"
         name: researchType
         widget: select
         options: ["Commissioned Research", "In-house Research", "International Research", "Other"]
         required: false
+      - {label: "Order (lower = first)", name: weight, widget: number, required: false, default: 0}
       - {label: "Content", name: body, widget: markdown, required: false}
       - {label: "Draft", name: draft, widget: boolean, default: false}
 
@@ -143,17 +146,18 @@ collections:
     label: "Resources (English)"
     folder: content/en/resources
     create: true
-    filter: {field: "title", value: "_index", pattern: "^(?!_index$).*"}
     slug: "{{year}}-{{slug}}"
     fields:
       - {label: "Title", name: title, widget: string}
       - {label: "Date", name: date, widget: datetime, required: false}
       - {label: "Cover Image", name: image, widget: image, required: false}
       - {label: "Description", name: description, widget: string, required: false}
+      - {label: "External Link (direct redirect on click)", name: externalLink, widget: string, required: false}
       - label: "Type"
         name: resourceType
         widget: select
         options: ["Report", "Paper", "Policy Document", "Presentation", "Other"]
         required: false
+      - {label: "Order (lower = first)", name: weight, widget: number, required: false, default: 0}
       - {label: "Content", name: body, widget: markdown, required: false}
       - {label: "Draft", name: draft, widget: boolean, default: false}
