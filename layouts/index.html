@@ -1,0 +1,39 @@
+{{- define "main" }}
+
+{{/* ── 미니멀 대문 ── */}}
+{{- with .Site.Params.homeInfoParams }}
+<div class="home-hero">
+  {{- with .Title }}<p class="home-hero-title">{{ . }}</p>{{- end }}
+  {{- with .Content }}<p class="home-hero-sub">{{ . | markdownify }}</p>{{- end }}
+</div>
+{{- end }}
+
+{{/* ── 최근 자료 목록 ── */}}
+{{- $lang := .Language.Lang }}
+{{- $pages := where .Site.RegularPages "Draft" false }}
+{{- if $pages }}
+<div class="home-list">
+  {{- range first 15 (sort $pages "Date" "desc") }}
+  {{- $link := .Permalink }}
+  {{- if .Params.externalLink }}{{- $link = .Params.externalLink }}{{- end }}
+  {{- $section := .Section }}
+  {{- $badge := $section }}
+  {{- if eq $lang "ko" }}
+    {{- if eq $section "research" }}{{- $badge = "연구" }}{{- end }}
+    {{- if eq $section "resources" }}{{- $badge = "자료" }}{{- end }}
+  {{- else }}
+    {{- if eq $section "research" }}{{- $badge = "Research" }}{{- end }}
+    {{- if eq $section "resources" }}{{- $badge = "Resources" }}{{- end }}
+  {{- end }}
+  {{- if $badge }}
+  <a href="{{ $link }}" class="home-item"{{ if .Params.externalLink }} target="_blank" rel="noopener"{{ end }}>
+    <span class="home-badge">{{ $badge }}</span>
+    <span class="home-title">{{ .Title }}</span>
+    <span class="home-date">{{ .Date.Format "2006.01.02" }}</span>
+  </a>
+  {{- end }}
+  {{- end }}
+</div>
+{{- end }}
+
+{{- end }}
