@@ -326,3 +326,85 @@ body::before {
     font-size: 13px !important;
     padding: 0 2px !important;
   }
+/* ── 홈 대문 (미니멀) ── */
+.home-hero {
+  padding: 1.5rem 0 1rem;
+  border-bottom: 2px solid #1ca198;
+  margin-bottom: 1rem;
+}
+
+.home-hero-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.3rem;
+  color: var(--primary);
+}
+
+.home-hero-sub {
+  font-size: 0.85rem;
+  color: var(--secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── 홈 자료 목록 ── */
+.home-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--primary);
+  transition: color 0.2s;
+}
+
+.home-item:hover {
+  color: #1ca198;
+}
+
+.home-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #fff;
+  background: #1ca198;
+  padding: 2px 6px;
+  border-radius: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.home-title {
+  flex: 1;
+  font-size: 0.88rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.home-date {
+  font-size: 0.75rem;
+  color: var(--secondary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .home-hero-title {
+    font-size: 0.88rem;
+  }
+
+  .home-title {
+    font-size: 0.8rem;
+  }
+
+  .home-date {
+    font-size: 0.7rem;
+  }
+}
