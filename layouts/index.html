@@ -1,38 +1,47 @@
 {{- define "main" }}
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{- if .Content }}
+  <div class="post-content">{{ .Content }}</div>
+  {{- end }}
+</header>
 
-{{/* ── 대문 ── */}}
-{{- with .Site.Params.homeInfoParams }}
-<div class="home-hero">
-  {{- with .Title }}<h1 class="home-hero-title">{{ . }}</h1>{{- end }}
-  {{- with .Content }}<p class="home-hero-sub">{{ . | markdownify }}</p>{{- end }}
+{{- if .Pages }}
+<div class="section-grid">
+  {{- range sort .Pages "Params.weight" "asc" }}
+  <div class="section-card">
+    {{- if .Params.externalLink }}
+    <a href="{{ .Params.externalLink }}" target="_blank" rel="noopener">
+    {{- else }}
+    <a href="{{ .Permalink }}">
+    {{- end }}
+      {{- if .Params.image }}
+      <img class="card-thumb" src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+      {{- else }}
+      <div class="card-thumb-placeholder">📁</div>
+      {{- end }}
+      <div class="card-body">
+        <div class="card-meta">
+          {{- with .Params.resourceType }}
+          <span class="card-badge">{{ . }}</span>
+          {{- end }}
+          {{- if not .Date.IsZero }}
+          <span class="card-date">{{ .Date.Format "2006.01.02" }}</span>
+          {{- end }}
+        </div>
+        <p class="card-title">{{ .Title }}</p>
+        {{- with .Description }}
+        <p class="card-desc">{{ . }}</p>
+        {{- end }}
+        {{- if .Params.externalLink }}
+        <p class="card-link-hint">↗ 외부 링크</p>
+        {{- end }}
+      </div>
+    </a>
+  </div>
+  {{- end }}
 </div>
+{{- else }}
+<p style="color:var(--secondary); margin-top:2rem;">곧 업데이트될 예정입니다.</p>
 {{- end }}
-
-{{/* ── 최근 자료 목록 ── */}}
-{{- $lang := .Language.Lang }}
-{{- $pages := where .Site.RegularPages "Draft" false }}
-{{- if $pages }}
-<div class="home-list">
-  {{- range first 15 (sort $pages "Date" "desc") }}
-  {{- $link := .Permalink }}
-  {{- if .Params.externalLink }}{{- $link = .Params.externalLink }}{{- end }}
-  {{- $section := .Section }}
-  {{- $badge := "" }}
-  {{- if eq $lang "ko" }}
-    {{- if eq $section "research" }}{{- $badge = "연구" }}{{- end }}
-    {{- if eq $section "resources" }}{{- $badge = "자료" }}{{- end }}
-  {{- else }}
-    {{- if eq $section "research" }}{{- $badge = "Research" }}{{- end }}
-    {{- if eq $section "resources" }}{{- $badge = "Resources" }}{{- end }}
-  {{- end }}
-  {{- if $badge }}
-  <a href="{{ $link }}" class="home-item"{{ if .Params.externalLink }} target="_blank" rel="noopener"{{ end }}>
-    <span class="home-badge">{{ $badge }}</span>
-    <span class="home-title">{{ .Title }}</span>
-  </a>
-  {{- end }}
-  {{- end }}
-</div>
-{{- end }}
-
 {{- end }}
