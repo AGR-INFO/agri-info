@@ -21,9 +21,14 @@
       <div class="card-thumb-placeholder">📋</div>
       {{- end }}
       <div class="card-body">
-        {{- with .Params.researchType }}
-        <div class="card-badge">{{ . }}</div>
-        {{- end }}
+        <div class="card-meta">
+          {{- with .Params.researchType }}
+          <span class="card-badge">{{ . }}</span>
+          {{- end }}
+          {{- if not .Date.IsZero }}
+          <span class="card-date">{{ .Date.Format "2006.01.02" }}</span>
+          {{- end }}
+        </div>
         <p class="card-title">{{ .Title }}</p>
         {{- with .Description }}
         <p class="card-desc">{{ . }}</p>
