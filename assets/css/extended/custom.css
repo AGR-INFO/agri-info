@@ -326,45 +326,51 @@ body::before {
     font-size: 13px !important;
     padding: 0 2px !important;
   }
-/* ── 홈 대문 (미니멀) ── */
+/* ── 홈 대문 ── */
 .home-hero {
-  padding: 1.5rem 0 1rem;
-  border-bottom: 2px solid #1ca198;
-  margin-bottom: 1rem;
+  text-align: center;
+  padding: 2.5rem 1rem 2rem;
 }
 
 .home-hero-title {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin: 0 0 0.3rem;
+  margin: 0 0 0.6rem;
   color: var(--primary);
 }
 
 .home-hero-sub {
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--secondary);
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.7;
 }
 
 /* ── 홈 자료 목록 ── */
 .home-list {
   display: flex;
   flex-direction: column;
+  gap: 8px;
+  margin-top: 1.5rem;
 }
 
 .home-item {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 0.65rem 0;
-  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 1.1rem;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.6);
   text-decoration: none;
   color: var(--primary);
-  transition: color 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
 
 .home-item:hover {
+  background: rgba(255, 255, 255, 0.9);
   color: #1ca198;
 }
 
@@ -373,7 +379,7 @@ body::before {
   font-weight: 700;
   color: #fff;
   background: #1ca198;
-  padding: 2px 6px;
+  padding: 2px 7px;
   border-radius: 3px;
   white-space: nowrap;
   flex-shrink: 0;
@@ -388,22 +394,34 @@ body::before {
   text-overflow: ellipsis;
 }
 
-.home-date {
-  font-size: 0.75rem;
-  color: var(--secondary);
-  white-space: nowrap;
-  flex-shrink: 0;
+/* ── 카드 날짜 ── */
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 0.35rem;
 }
 
+.card-date {
+  font-size: 0.7rem;
+  color: var(--secondary);
+}
+
+/* 모바일 */
 @media (max-width: 768px) {
   .home-hero-title {
-    font-size: 0.88rem;
+    font-size: 1.1rem;
+  }
+
+  .home-hero-sub {
+    font-size: 0.85rem;
   }
 
   .home-title {
     font-size: 0.8rem;
+    white-space: normal;
   }
-
+}
   .home-date {
     font-size: 0.7rem;
   }
