@@ -316,6 +316,11 @@ body::before {
   .menu a {
     font-size: 13px !important;
   }
+   .card-link-hint {
+  font-size: 0.75rem;
+  color: #1ca198;
+  margin: 4px 0 0;
+}
 
   .lang-menu a {
     font-size: 13px !important;
