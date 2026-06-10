@@ -1,7 +1,7 @@
 ---
-title: "[한국농정] 지역 특성 고려한 일본의 다양한 전략작물 정책"
-date: 2024-02-25T18:00:00.000+09:00
-image: /images/rice_paddies_in_aizu-_japan.jpg
-externalLink: https://www.ikpnews.net/news/articleView.html?idxno=62974
+title: 자료
+date: ""
+image: ""
+externalLink: ""
 draft: false
 ---
